@@ -5,12 +5,57 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
   <title>WANNAROBTOP ORIGINAL WEBSITE</title>
+  <style>
+    body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        height: 100vh;
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background-color: #f5f5f5;
+    }
+
+    h1 {
+        font-size: 3em;
+        color: #333;
+    }
+
+    .founder {
+        font-weight: bold;
+    }
+  </style>
 </head>
 <body>
   <h1>WannaRobtop Original Website</h1>
   <p class="founder">Founder: velethon</p>
   <p>WannaRobtop @ CC</p>
   <p>Copyright @ CC | All rights reserved.</p>
-  <!-- more HTML content goes here -->
+
+  <h2 id="time"></h2>
+
+  <script>
+    function updateTime() {
+        var now = new Date();
+        var hours = now.getHours();
+        var minutes = now.getMinutes();
+        var seconds = now.getSeconds();
+
+        // Add leading zero if single digit
+        hours = hours < 10 ? '0' + hours : hours;
+        minutes = minutes < 10 ? '0' + minutes : minutes;
+        seconds = seconds < 10 ? '0' + seconds : seconds;
+
+        var timeString = hours + ':' + minutes + ':' + seconds;
+        document.getElementById('time').textContent = timeString;
+    }
+
+    // Update time every second
+    setInterval(updateTime, 1000);
+
+    // Initial update
+    updateTime();
+  </script>
 </body>
 </html>
