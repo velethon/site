@@ -5,36 +5,31 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
   <title>WANNAROBTOP ORIGINAL WEBSITE</title>
+  <script>
+    function updateTime() {
+      var now = new Date();
+      var hours = now.getHours().toString().padStart(2, '0');
+      var minutes = now.getMinutes().toString().padStart(2, '0');
+      var seconds = now.getSeconds().toString().padStart(2, '0');
+
+      var timeString = hours + ':' + minutes + ':' + seconds;
+      document.getElementById('time').innerText = timeString;
+
+      // Update every second
+      setTimeout(updateTime, 1000);
+    }
+
+    // Run the function when the page is loaded
+    window.onload = updateTime;
+  </script>
 </head>
 <body>
   <h1>WannaRobtop Original Website</h1>
   <p class="founder">Founder: velethon</p>
   <p>WannaRobtop @ CC</p>
   <p>Copyright @ CC | All rights reserved.</p>
-
-  <h2 id="time"></h2>
-
-  <script>
-    function updateTime() {
-        var now = new Date();
-        var hours = now.getHours();
-        var minutes = now.getMinutes();
-        var seconds = now.getSeconds();
-        
-        // Add leading zero if single digit
-        hours = hours < 10 ? '0' + hours : hours;
-        minutes = minutes < 10 ? '0' + minutes : minutes;
-        seconds = seconds < 10 ? '0' + seconds : seconds;
-
-        var timeString = hours + ':' + minutes + ':' + seconds;
-        document.getElementById('time').textContent = timeString;
-    }
-
-    // Update time every second
-    setInterval(updateTime, 1000);
-
-    // Initial update
-    updateTime();
-  </script>
+  
+  <!-- Display time without style -->
+  <p id="time"></p>
 </body>
 </html>
